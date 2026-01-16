@@ -8,6 +8,9 @@ import os
 db_host = os.getenv('MYSQL_HOST', 'localhost')
 #app.config['SQLALCHEMY_DATABASE_URI']=f'mysql://root:@{db_host}:3306/farmers'
 
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
+
 import os
 
 db = mysql.connector.connect(
